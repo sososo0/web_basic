@@ -1,0 +1,240 @@
+@font-face {
+    font-family: nanum;
+    src: url(Nanum_Gothic/NanumGothic-Regular.ttf)format('ttf');
+}
+
+*{ /*기본값 설정*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[class = "container"]{
+    width: 100%;
+    height: 100vh;
+    background:url(images/sky.jpg); /*배경사진 설정*/
+}
+
+.container header{
+    width: 80%;
+    height: 80px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container header h1{
+    text-decoration: none;
+    color: white;
+    font-family: nanum;
+    font-size: 3em;
+    margin-top: auto;
+}
+
+.container header .wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.container header .wrapper nav{
+    margin-right: 20px;
+    display: inline-block; /*nav안에 있는 tag들이 일렬로 정렬되기 위해 사용*/
+    margin: 0 10px;
+}
+
+.container header .wrapper nav a{
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.container header .wrapper nav a:hover{ /*커서를 버튼 위에 올렸을 때 반응*/
+    color: #1fdfdf;
+}
+
+.container header .wrapper .searchArea{
+    background: none;
+    color: white;
+}
+
+.container header .wrapper .searchArea{
+    background: none;
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: auto;
+}
+
+.container header .wrapper .searchArea input{
+    background: none;
+    border: 1px white;
+    color: white;
+    padding: 0px;
+    margin-top: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.container header .wrapper button{
+    background: none;
+    border: 1px white;
+    color: white;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.container aside{
+    width: 20%;
+    min-height: 80%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 1.5%;
+    float: left;
+    background: aliceblue;
+    text-align: center;
+}
+
+.container aside p{
+    font-size: 1.7em;
+    font-family: nanum;
+    margin-top: 30%;
+}
+
+.container aside #info1{
+    float: left;
+    font-size: 1.3em;
+    margin-left: 10%;
+    margin-top: 20%;
+    margin-right: 10%;
+}
+
+.container aside #info2{
+    font-size: 1.3em;
+    margin-left: 10%;
+    margin-right: 10%;
+    clear:left; /*일렬로 정렬되는 것 방지*/
+    text-align: left;
+}
+
+.container aside #info3{
+    font-size: 1.3em;
+    margin-left: 10%;
+    margin-right: 10%;
+    clear:left; /*일렬로 정렬되는 것 방지*/
+    text-align: left;
+}
+
+.container aside .result1{
+    font-size: 1.3em;
+    margin-left: 10%;
+    margin-right: 10%;
+    color:#cc3300; /*추천결과에 대한 색깔을 달리 표시*/
+    clear:left; /*일렬로 정렬되는 것 방지*/
+    text-align: left;
+}
+
+.container aside .result2{
+    font-size: 1.3em;
+    margin-left: 10%;
+    margin-right: 10%;
+    color:#cc3300; /*추천결과에 대한 색깔을 달리 표시*/
+    clear:left; /*일렬로 정렬되는 것 방지*/
+    text-align: left;
+}
+
+.container aside #remove{
+    background: none;
+    border: 2px solid aliceblue;
+    color: aliceblue;
+    padding: 1% 1.5%;
+    border-radius: 30px;
+    position: fixed;
+    right: 5%; /*버튼을 오른쪽으로 배치하기 위해*/
+    bottom: 10%;
+    outline: none;
+    cursor: pointer;
+}
+
+.container aside #remove:hover{ /*커서를 버튼 위에 올렸을 때 반응*/
+    background-color: rgba(0,0,0,0.3);
+}
+
+.container #resultArea{
+    width: 70%;
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 10%;
+    color: black;
+    background: aliceblue;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.container #resultArea td{ 
+    padding: 1% 1%;
+    overflow: hidden; /*결과 값이 넘칠 경우 숨기게 했다.*/
+    word-break: break-all;
+    border: 1px solid gray;
+}
+
+footer{
+    position: fixed; /*footer의 위치를 고정시켰다.*/
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer I{ /*footer의 contents*/
+    color: white;
+}
+
+@media only screen and (max-width:900px) { /*창이 900px보다 작을 때 반응*/
+
+    .container aside #info1{
+        float: left;
+        font-size: 0.95em; /*주로 글자크기와 margin-left가 변화하였다.*/
+        margin-left: 5%;
+        margin-top: 20%;
+        margin-right: 10%;
+    }
+    
+    .container aside #info2{
+        font-size: 0.95em;
+        margin-left: 5%;
+        margin-top: 20%;
+        margin-right: 10%;
+        clear:left; /*일렬로 정렬되는 것 방지*/
+        text-align: left;
+    }
+    .container aside #info3{
+        font-size: 0.95em;
+        margin-left: 5%;
+        margin-right: 10%;
+        clear:left; /*일렬로 정렬되는 것 방지*/
+        text-align: left;
+    }
+
+    .container aside .result1{
+        font-size: 0.95em;
+        margin-left: 5%;
+        margin-right: 10%;
+        color:#cc3300; /*추천결과에 대한 색깔을 달리 표시*/
+        clear:left; /*일렬로 정렬되는 것 방지*/
+        text-align: left;
+    }
+
+    .container aside .result2{
+        font-size: 0.95em;
+        margin-left: 5%;
+        margin-right: 10%;
+        color:#cc3300; /*추천결과에 대한 색깔을 달리 표시*/
+        clear:left; /*일렬로 정렬되는 것 방지*/
+        text-align: left;
+    }
+
+
+}

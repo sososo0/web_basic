@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>202025181_박소현_Weather_recommendation</title>
+        <link rel="stylesheet" href="intro.css"> <!--외부 css를 사용-->
+        <script src="search.js"></script>
+    </head>
+    <body>
+       <div class="container">
+           <header>
+               <h1>WR</h1> <!--WR은 Weather Recommendation의 약자이다.-->
+               <div class="wrapper">
+                    <nav>
+                        <a href="#">HOME</a> <!--intro에서는 page이동 기능을 제공하지 않는다.-->
+                        <a href="#">FOOD</a>
+                        <a href="#">PLACE</a>
+                    </nav>
+                    <div class="searchArea">
+                        <input id="search_input" type="search" placeholder="search" />
+                    </div>
+                    <button id="search" onclick="getSearch()"><b>검색</b></button>
+               </div>
+           </header>
+           <section id = "intro">
+                <h2>Today's Weather?!</h2>
+                <p>날씨에 따른 음식과 장소를 추천해드립니다!<br>
+                날씨에 따른 음식과 장소를 추천받고 싶다면?<br>
+                WELCOME WR!</p>
+                <button id = "use" onclick="goHome()">이곳을 클릭하면 시작!</button> <!--goHome()은 Home.html로 이동한다.-->
+           </section>
+           <footer>
+                <I>Copyright &copy; 2022 Sohyun Park</I>
+           </footer>
+       </div> 
+    </body>
+    <script src="goHome.js"></script> <!--외부 js를 사용-->
+</html>

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>assignment #8 _202025181_박소현</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <link rel="stylesheet" href="./common.css">
+    </head>
+    <body>
+        <section class="wrapper">
+            <h1>부대반점</h1>
+            <div id="list">
+                <img src="./images/jajang.jpg" />
+                <div id="item"> 자장면 (5,000원) </div>
+                <input id="jajang" type="number" placeholder="수량" value="0" />
+            </div>
+            <div id="list">
+                <img src="./images/bob.jpg" />
+                <div id="item"> 볶음밥 (6,000원) </div>
+                <input id="bob" type="number" placeholder="수량" value="0" />
+            </div>
+            <div id="list">
+                <img src="./images/tang.jpg" />
+                <div id="item"> 탕수육 (10,000원) </div>
+                <input id="tang" type="number" placeholder="수량" value="0" />
+            </div>
+            <div id="list">
+                <img src="./images/gun.jpg" />
+                <div id="item"> 군만두 (5,000원) </div>
+                <input id="gun" type="number" placeholder="수량" value="0" />
+            </div>
+            <div id="addr">
+                <div id="add">배달주소 : </div>
+                <input id="address" type="text" placeholder="주소" />
+            </div>
+            <div id="payinfo">현장에서 현금으로 결제 해주세요.</div>
+            <div id="last">
+                <button type="button" onclick="order()" required >주문하기</button>
+            </div>
+        </section>
+        <section class="wrapper">
+            <h1>주문내역</h1>
+            <div class="new_list1">
+                <div>주문 일자</div>
+                <div id="date"></div>
+            </div>
+            <div class="new_list1">
+                <div>주문 시각</div>
+                <div id="time"></div>
+            </div>
+            <div class="new_list1">
+                <div>배달 주소</div>
+                <div id="destination"></div>
+            </div>
+            <div class="new_list1"> 
+                <div>결제 예상 금액</div>
+                <div id="price"></div>             
+            </div>
+            <div class="new_list2"> 
+                <div>주문 내역</div>
+                <div id="totalJajang"></div>
+                <div id="totalBob"></div>
+                <div id="totalTang"></div>
+                <div id="totalGun"></div>
+            </div>
+        </section>
+    </body>
+    <script src="common.js"></script>
+</html>

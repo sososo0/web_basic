@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>202025181_박소현_Weather_recommendation_home</title>
+        <link rel="stylesheet" href="home.css"> <!--외부 css를 사용-->
+    </head>
+    <body>
+       <div class="container">
+           <header>
+               <h1>WR</h1> <!--WR은 Weather Recommendation의 약자이다.-->
+               <div class="wrapper">
+                    <nav>
+                        <a href="Home.html">HOME</a> <!--Home을 누르면 Home.html로 이동-->
+                        <a href="FOOD.html">FOOD</a> <!--FOOD을 누르면 FOOD.html로 이동-->
+                        <a href="Place.html">PLACE</a> <!--Place을 누르면 Place.html로 이동-->
+                    </nav>
+                    <div class="searchArea"> <!--검색어를 입력받는 부분-->
+                        <input id="search_input" type="search" placeholder="search" />
+                    </div> <!--검색을 누르면 getSearch()가 실행-->
+                    <button id="search" onclick="getSearch()"><b>검색</b></button>
+               </div>
+           </header>
+           <aside>
+               <p id = "manual"> 
+                   <h2 style="margin-bottom: 5%;">홈페이지 사용법</h2>
+                   <ul style="list-style: none; margin-left: 10%; margin-right: 10%;">
+                       <li>1. 추천 받은 음식을 FOOD 페이지로 이동해서 검색한다.</li>
+                       <li>2. 추천 받은 장소를 PLACE 페이지로 이동해서 검색한다.</li>
+                   </ul>
+               </p>
+               <p id = "warning">
+                HOME에서는 검색기능을 제공하지 않습니다.<br>
+                FOOD나 PLACE page로 이동해서 검색기능을 사용해보세요!
+                </p>
+               <script>
+                    var user = localStorage.getItem("name"); /*localStorage에 저장된 값을 불러옴*/
+                    var place = localStorage.getItem("place");
+                    var today_weather = localStorage.getItem("weather");
+                    
+                    document.write("<div id = "+"info1"+">"); /*DOM을 활용해 HTML element를 다룸*/
+                    document.write("사용자: ",user);
+                    document.write("</div>");
+                    document.write("<div id = "+"info2"+">");
+                    document.write("지역: ",place);
+                    document.write("</div>");
+                    document.write("<div id = "+"info3"+">")
+                    document.write("날씨: ",today_weather);
+                    document.write("</div>");
+
+                </script>
+           </aside>
+            <section id ="contents">
+                <div class ="items">
+                    <img id = "img1" src = "images/food.png">
+                </div>
+                <div id = "comment1" class ="items">
+                    날씨에 따른 음식 추천!<br>
+                    오늘하루는 추천 음식을 드셔보시는 것은 어떤가요??
+                    <script>
+                        var output1 = localStorage["food"]; /*localStorage에 저장된 값을 불러옴*/
+    
+                        var foods = JSON.parse(output1); /*localStorage에 저장된 배열을 다루기 위해 사용*/
+    
+                        document.write("<div class = result1>"); /*DOM을 활용해 HTML element를 다룸*/
+                        document.write("<br>");
+                        document.write("=> ",foods);
+                        document.write("</div>");
+                    </script>
+                </div>
+                <div class ="items">
+                    <img id = "img2" src = "images/place.png">
+                </div>
+                <div id = "comment2" class ="items">
+                    날씨에 따른 장소 추천!<br>
+                    오늘하루는 추천 장소에 가서 시간을 보내보시는 것은 어떤가요??
+                    <script>
+                        var output2 = localStorage["re_place"]; /*localStorage에 저장된 값을 불러옴*/
+    
+                        var places = JSON.parse(output2); /*localStorage에 저장된 배열을 다루기 위해 사용*/
+
+                        document.write("<div class = result2>"); /*DOM을 활용해 HTML element를 다룸*/
+                        document.write("<br>");
+                        document.write("=> ",places);
+                        document.write("</div>");
+                    </script>
+                </div>
+            </section>
+           <footer>
+                <I>Copyright &copy; 2022 Sohyun Park</I>
+           </footer>
+       </div>
+    </body>
+</html>

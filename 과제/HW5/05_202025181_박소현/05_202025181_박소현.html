@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>05_202025181_박소현</title>
+        <style type = "text/css">
+            body{
+                padding: 0;
+                width: 1060px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .header{
+                margin:0;
+                padding: 0;
+                color: white;
+                text-align: center;
+                background-color: #111;
+            }
+            .section{
+                text-align: center;
+                margin: 30px;
+            }
+            .container{
+                width: 980px;
+                display: grid;
+                height: auto;
+                margin-top: 5%;
+                margin-left: auto;
+                margin-right: auto;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: minmax(10px,300px);
+                gap: 30px 30px;
+            }
+            @media only screen and (max-width: 1060px){
+                .container{
+                    display: grid;
+                    height: auto;
+                    margin-top: 5%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: minmax(10px,auto);
+                    gap: 20px 20px;
+                }
+                .items:nth-child(1){
+                    order: 1;
+                }
+                .items:nth-child(5){
+                    order: 3;
+                }
+                .items:nth-child(9){
+                    order: 5;
+                }
+                .items:nth-child(2){
+                    order: 2;
+                }
+                .items:nth-child(6){
+                    order: 4;
+                }
+                .items:nth-child(10){
+                    order: 6;
+                }
+                .items:nth-child(3){
+                    order: 7;
+                }
+                .items:nth-child(7){
+                    order: 9;
+                }
+                .items:nth-child(11){
+                    order: 11;
+                }
+                .items:nth-child(4){
+                    order: 8;
+                }
+                .items:nth-child(8){
+                    order: 10;
+                }
+                .items:nth-child(12){
+                    order: 12;
+                }
+            }
+            .items{
+                flex-basis: auto;
+            }
+            #text1{
+                font-size: 1.6em;
+            }
+            #text2{
+                font-size: 0.95em;
+            }
+            .footer{
+                margin-top: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "header">
+            <h1 style= "font-weight: 400">202025181 박소현</h1>
+        </div>
+        <div class = "section">
+            <h1>Compare the products</h1>
+            <div class = "container">
+                <div class = "items">
+                    <img id ="img" src = "images/sph-a5000.jpg" alt = "sph-a5000">
+                </div>
+                <div class = "items">
+                    <img id ="img" src = "images/sch-w120.jpg" alt = "sch-w120">
+                </div>
+                <div class = "items">
+                    <img id ="img" src = "images/sch-v500.jpg" alt = "sch-v500">
+                </div>
+                <div class = "items">
+                    <img id ="img" src = "images/sch-s250.jpg" alt = "sch-s250" >
+                </div>
+                <div id = "text1" class = "items">SPH-A5000</div>
+                <div id = "text1" class = "items">SCH-W120</div>
+                <div id = "text1" class = "items">SCH-V00</div>
+                <div id = "text1" class = "items">SCH-S250</div>
+                <div id = "text2" class = "items">세계 최초의 전자동 폴더</div>
+                <div id = "text2" class = "items">한국 최초의 WCDMA 폰</div>
+                <div id = "text2" class = "items">가로본능 로테이션 폴더폰</div>
+                <div id = "text2" class = "items">세계 최초의 500만 화소 카메라 탑재 휴대폰</div>
+            </div>
+        </div>
+        <div class = "footer">
+            <I>Copyright &copy; 2022 Sohyun Park</I>
+        </div>
+    </body>
+</html>

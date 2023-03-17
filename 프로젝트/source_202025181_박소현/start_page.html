@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>start_page_202025181_박소현</title>
+        <link rel="stylesheet" href="start.css"> <!--external css 사용-->
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Join Weather Recommendation!</h1>
+            </header>
+            <section>
+                <input id="user" type="text" placeholder="사용자 이름" /> <!--placeholder의 사용으로 사용자가 무엇을 입력해야하는지 명시-->
+                <input list = "places" id = "place" placeholder="당신이 있는 지역"/>
+                <!--datalist의 사용으로 입력의 대상이 모호할 수도 있는 부분을 명시적으로 바꿔주기 위해 사용-->
+                <datalist id="places">
+                    <option>강서구</option> <!--부산지역에 한정하여 입력을 받도록 하였습니다.-->
+                    <option>금정구</option> <!--지역의 범위가 넓어지면 수집해야하는 데이터가 많아지기 때문입니다.-->
+                    <option>해운대구</option>
+                    <option>중구</option>
+                    <option>영도구</option>
+                    <option>연제구</option>
+                    <option>수영구</option>
+                    <option>서구</option>
+                    <option>사하구</option>
+                    <option>사상구</option>
+                    <option>북구</option>
+                    <option>부산진구</option>
+                    <option>동래구</option>
+                    <option>동구</option>
+                    <option>남구</option>
+                    <option>기장군</option>
+                </datalist>
+                <button id="join" onclick="getJoin()"><b>Join</b></button>
+                <!--join이라는 버튼을 누르게 되면 getJoin()이 실행되는데 이는 start.js내부에 존재-->
+            </section>
+        </div>
+        <script src="start.js"></script> <!--external javascript 사용-->
+    </body>
+</html>

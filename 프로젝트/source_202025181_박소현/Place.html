@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>202025181_박소현_Weather_recommendation_place</title>
+        <link rel="stylesheet" href="place.css"> <!--외부 css를 사용-->
+    </head>
+    <body>
+       <div class="container">
+           <header>
+               <h1>WR</h1> <!--WR은 Weather Recommendation의 약자이다.-->
+               <div class="wrapper">
+                    <nav>
+                        <a href="Home.html">HOME</a> <!--Home을 누르면 Home.html로 이동-->
+                        <a href="FOOD.html">FOOD</a> <!--FOOD을 누르면 FOOD.html로 이동-->
+                        <a href="Place.html">PLACE</a> <!--Place을 누르면 Place.html로 이동-->
+                    </nav> 
+                    <div class="searchArea"> <!--검색어를 입력받는 부분-->
+                        <input id="search_input" type="search" placeholder="search" />
+                    </div> <!--검색을 누르면 getSearch()가 실행-->
+                    <button id="search" onclick="getSearch()"><b>검색</b></button>
+               </div>
+           </header>
+           <aside>
+                <p>
+                    추천받은 장소를 <br> 검색창에서 검색해보세요!
+                </p>
+                <button id = "remove">REMOVE</button> <!--검색어를 지우는 버튼-->
+                <script>
+                    var user = localStorage.getItem("name"); /*localStorage에 저장된 값을 불러옴*/
+                    var place = localStorage.getItem("place");
+                    var today_weather = localStorage.getItem("weather");
+                    
+                    document.write("<div id = "+"info1"+">"); /*DOM을 활용해 HTML element를 다룸*/
+                    document.write("사용자: ",user);
+                    document.write("</div>");
+                    document.write("<div id = "+"info2"+">");
+                    document.write("지역: ",place);
+                    document.write("</div>");
+                    document.write("<div id = "+"info3"+">")
+                    document.write("날씨: ",today_weather);
+                    document.write("</div>");
+
+                    var output1 = localStorage["food"]; /*localStorage에 저장된 값을 불러옴*/
+                    var foods = JSON.parse(output1); /*localStorage에 저장된 배열을 다루기 위해 사용*/
+    
+                    document.write("<div class = result1>"); /*DOM을 활용해 HTML element를 다룸*/
+                    document.write("<br>");
+                    document.write("음식: ",foods);
+                    document.write("</div>");
+
+                    var output2 = localStorage["re_place"]; /*localStorage에 저장된 값을 불러옴*/
+                    var places = JSON.parse(output2); /*localStorage에 저장된 배열을 다루기 위해 사용*/
+
+                    document.write("<div class = result2>"); /*DOM을 활용해 HTML element를 다룸*/
+                    document.write("<br>");
+                    document.write("장소: ",places);
+                    document.write("</div>");
+
+                </script>
+            </aside>
+            <section id = "resultArea"> <!--검색결과를 추가하기 위한 부분-->
+            </section>
+            <footer>
+                 <I>Copyright &copy; 2022 Sohyun Park</I>
+            </footer>
+        </div> <!--jquery와 ajax를 사용-->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+             crossorigin="anonymous"></script>
+         <script> 
+            $(document).ready(function () {
+                 $("#search").click(function () {
+                    $.ajax({
+                        method: "GET",
+                        url: "https://dapi.kakao.com/v2/search/web",
+                        data: { query: $("#search_input").val() },
+                        headers: { Authorization: "KakaoAK 5a437680ab2f94b9136076381bdef9b3" }
+                    })
+                        .done(function (msg) {
+                            console.log(msg.documents[0].title);
+                            console.log(msg.documents[0].url);
+                            console.log(msg.documents[0].contents);
+                            $( "section" ).append( "<table>");
+                            $( "section" ).append( "<tr>");
+                            $( "section" ).append( "<td class = "+"category"+">" + "검색어" + "</td>"+"<td>" + msg.documents[0].title + "</td>" );
+                            $( "section" ).append( "</tr>");
+                            $( "section" ).append( "<tr>");
+                            $( "section" ).append( "<td class = "+"category"+">" + "링크" + "</td>"+"<td>" +"<a href ="+msg.documents[0].url + ">"+ "Search Here!"+"</a>"+ "</td>" );
+                            $( "section" ).append( "</tr>");
+                            $( "section" ).append( "<tr>");
+                            $( "section" ).append( "<td class = "+"category"+">" + "관련내용" + "</td>"+"<td>" + msg.documents[0].contents + "</td>" );
+                            $( "section" ).append( "</tr>");
+                            $( "section" ).append( "</table>");
+
+                        });     /*동적으로 검색결과를 추가하고 있다.*/
+             });
+         });
+
+         </script>
+         <script> /*검색결과를 지우기 위해 사용되었다. empty()는 <section>내부를 비운다.*/
+             $(function(){
+                $("button").on("click",function(){
+                    $("#resultArea").empty();
+                });
+             });
+         </script>
+         <script src = "search_button.js"></script> <!--외부 js를 사용-->
+     </body>
+ </html>

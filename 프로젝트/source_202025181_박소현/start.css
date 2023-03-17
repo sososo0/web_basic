@@ -1,0 +1,80 @@
+* { /*기본값 설정*/
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 0px;
+}
+
+[class = "wrapper"] {
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+}
+
+body .wrapper header {
+    height:15%;
+    margin:5%;
+    text-align: center;
+}
+
+body header h1 {
+    margin:0px;
+    width:70%;
+    padding-left:10px;
+    font-size: 1.2em;
+}
+
+body .wrapper section {
+    display: flex;
+    flex-direction: column;
+}
+
+body .wrapper section input{
+    width: 80%;
+    height: 30%;
+    margin-bottom: 10px;
+    border: solid 1px lightgray;
+    border-radius: 3px;
+    padding-left: 5%;
+    color: black;
+    font-size: 15px;
+    align-self:center;
+}
+
+body .wrapper section input:focus{ /*사용자가 입력을 하기 위해 입력창을 클릭하면 입력창이 변화함*/
+    animation-name: border-focus;
+    animation-duration: 1s;
+    animation-fill-mode: forwards ;
+}
+
+@keyframes border-focus{
+    from{
+        border-radius: 0;
+    }
+    to{
+        border-radius: 20px;
+    }
+}
+
+body .wrapper section button {
+    background-color: skyblue;
+    border-color: skyblue;
+    color: white;
+    width: 80%;
+    height: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 16px;
+    align-self:center;
+}
+

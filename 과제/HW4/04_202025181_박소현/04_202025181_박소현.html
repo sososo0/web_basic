@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{
+                width: 980px;
+                margin: 0 auto;
+            }
+            #header{
+                margin:0;
+                font-weight: 400;
+                color: white;
+                text-align: center;
+                background-color: #111;
+            }
+            h1{
+                margin:0;
+                font-weight: 400;
+            }
+            #aside{
+                width: 30%;
+                float: left;
+                text-align: center;
+            }
+            
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #828282;
+            }
+            li {
+                float: left;
+            }
+            li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover {
+                background-color: #111;
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                border: 1px solid #dcdcdc;
+                border-collapse: collapse;
+            }
+            th{
+                border: 1px solid #dcdcdc;
+                font-weight: 400;
+                padding: 10px 5px;
+            }
+            .category{
+                background-color: #b4b4b4;
+                font-weight: bold;
+            }
+            .clear{
+                clear: right;
+            }
+            #section{
+                width:70%;
+                background-color: #b4b4b4;
+                float:right;
+                text-align: center;
+            }
+            #img{
+                margin: 5px;
+                border: 1px solid #111;
+                border-width: 3px;
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+                object-fit: cover;
+            }
+            #footer{
+                margin: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id ="header">
+            <h1>박소현의 홈페이지</h1>
+        </div>
+        <div id ="navigation">
+            <ul>
+                <li><a href = "#home">Home</a></li>
+                <li><a href = "#Profile">Profile</a></li>
+                <li><a href = "#Education">Education</a></li>
+                <li><a href = "#Skills">Skills</a></li>
+                <li><a href = "#Contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class ="clear"></div>
+        <div id ="aside">
+            <h2>202025181 박소현</h2>
+            <img src = "images/꼬부기.png" alt = "꼬부기" width="70%">
+            <table>
+                <tr>
+                    <th class = "category">이름</th><th>박소현</th>
+                </tr>
+                <tr>
+                    <th class = "category">학번</th><th>202025181</th>
+                </tr>
+                <tr>
+                    <th class = "category">학과</th><th>정보컴퓨터공학부</th>
+                </tr>
+                <tr>
+                    <th class = "category">학년</th><th>3학년</th>
+                </tr>
+            </table>
+        </div>
+        <div id ="section">
+            <div>
+                <h3>Education</h3>
+                <p>2022 인터넷과 웹기초</p>
+            </div>
+            <hr>
+            <div>
+                <h3>Skills</h3>
+                <img id ="img" src = "images/c++.png" alt = "c++">
+                <img id ="img" src = "images/java.png" alt = "java">
+                <img id ="img"  src = "images/js.png" alt = "js">
+                <img id ="img"  src = "images/python.png" alt = "python">
+                <img id ="img"  src = "images/html.png" alt = "html">
+                <img id ="img"  src = "images/react.png" alt = "react">
+            </div>
+        </div>
+        <div class ="clear"></div>
+        <div id ="footer">
+            <I>Copyright &copy; 2022 Sohyun Park</I>
+        </div>
+        <div class ="clear"></div>
+    </body>
+</html>
